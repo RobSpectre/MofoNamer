@@ -7,14 +7,13 @@ from flask import url_for
 from flask import redirect
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from settings import username, password
-
-
-SEND_GRID = smtplib.SMTP('smtp.sendgrid.net', 587)
-SEND_GRID.login(username, password)
 
 
 def send_email(to, sender, description):
+    send_grid = smtplib.SMTP('smtp.sendgrid.net', 587)
+    send_grid.login(os.environ['SENDGRID_USERNAME'],
+        os.environ['SENDGRID_PASSWORD'])
+
     # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
     msg['Subject'] = "Example Python Email"
@@ -30,7 +29,7 @@ def send_email(to, sender, description):
     # Attach parts into message container.
     msg.attach(part1)
 
-    SEND_GRID.sendmail(sender, to, msg.as_string())
+    send_grid.sendmail(sender, to, msg.as_string())
 
 
 app = Flask(__name__, static_url_path='/static')
