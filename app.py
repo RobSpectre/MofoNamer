@@ -34,7 +34,7 @@ def send_email(to, sender, description):
     SEND_GRID.sendmail(sender, to, msg.as_string())
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -58,4 +58,14 @@ if __name__ == '__main__':
     if port == 5000:
         app.debug = True
 
+=======
+@app.route('/')
+def index(page_title="Home"):
+    return render_template('index.html', page_title=page_title)
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    # Disable in production
+    app.debug = True
+>>>>>>> 7a66f97b7f7c523f7339de18cea8c75cb1ecc16a
     app.run(host='0.0.0.0', port=port)

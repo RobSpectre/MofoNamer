@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 settings.py
+=======
+*.project
+*.pydevproject
+*.pyc
+*.pyo
+*.swp
+>>>>>>> 7a66f97b7f7c523f7339de18cea8c75cb1ecc16a
