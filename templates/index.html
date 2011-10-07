@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Credits</li>
-</ul>
 <form action="{{url_for('index')}}" method="post">
+    <label for="idea">What's your idea?</label>
     <textarea id="idea" maxlength=500 required></textarea>
-    <input type="email" value="you@rockstar.com" id="submit" required/>
-    <button>Ask a Mofo</button>
+    <label for="email">What's your email?</label>
+    <input type="email" value="you@rockstar.com" id="email" required/>
+    <button id="submit">Get a Name from a Mofo</button>
 </form>
 {% endblock %}

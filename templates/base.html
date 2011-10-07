@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
     <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     {% block extra_js %}{% endblock %}
     {% endblock %}
 </head>
@@ -19,6 +20,15 @@
             {% block header %}
             <h1 id="title">MofoNamer</h1>
             <h2 id="page_title">{% block page_title %}{% endblock %}</h2>
+            {% endblock %}
+        </div>
+
+        <div id="navigation">
+            {% block navigation %}
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+            </ul>
             {% endblock %}
         </div>
 

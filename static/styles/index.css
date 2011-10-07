@@ -11,19 +11,102 @@ html, body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Droid Sans', Verdana, Arial, Helvetica, sans-serif;
     text-align: left;
 }
 
-h1 {
-    font-family: 'Holtwood One SC', serif;
-    font-size: 36px;
-    text-align: center;
-}
-
 #container {
-    background: white;
-    width: 970px;
+    width: 620px;
     margin: 0 auto 0 auto;
     display: block;
+}
+
+#header {
+    margin: 20px 0 -47px 0;
+    padding: 0;
+}
+
+#header h1 {
+    font-family: 'Holtwood One SC', serif;
+    font-size: 4em;
+    color: #3A80A5;
+    margin: 0 0 0 20px;
+}
+
+#navigation {
+    background: #DEA46C;
+    height: 83px;
+    border: 5px solid #3A80A5;
+    border-bottom: none;
+    padding: 5px 0 0 0;
+    margin: 0;
+}
+
+#navigation ul, li {
+    display: inline;
+    list-style: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 0 8px;
+    padding: 0;
+}
+
+#navigation a {
+    text-decoration: none;
+    color: white;
+}
+
+#navigation a:hover {
+    color: #B8581E;
+    border-top: 5px solid #B8581E;
+}
+
+
+#content {
+    margin: -47px 0 0 0;
+    padding: 10px;
+    border: 5px solid #3A80A5;
+    border-top: none;
+    background: white;
+}
+
+#content .label {
+    margin: 50px;
+    display: block;
+}
+
+#content textarea {
+    margin: 10px 0 0 10px;
+    width: 540px;
+    height: 200px;
+    display: block;
+    border: 3px solid #3A80A5; 
+}
+
+#content #email {
+    margin: 10px 0 0 10px;
+    width: 460px;
+    display: block;
+    border: 3px solid #3A80A5;
+}
+
+
+#footer {
+    color: white;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    margin: -10px 0 0 20px;
+    padding: 0;
+}
+
+#footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#footer a:hover {
+    color: #B8581E;
 }

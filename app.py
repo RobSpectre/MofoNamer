@@ -48,6 +48,10 @@ def index(page_title="Home"):
 def registered():
     return render_template('complete.html')
 
+@app.route('/about')
+def about(page_title="About"):
+    return render_template('index.html', page_title=page_title)
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
