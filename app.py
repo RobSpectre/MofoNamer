@@ -50,7 +50,7 @@ def registered():
 
 @app.route('/about')
 def about(page_title="About"):
-    return render_template('index.html', page_title=page_title)
+    return render_template('about.html', page_title=page_title)
 
 
 if __name__ == '__main__':

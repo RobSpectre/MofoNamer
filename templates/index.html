@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
+<h2 id="tagline">Get a name for your idea from a real mofo.</h2>
+<p id="description">Starting a new project but stumped on a name?  Put your idea
+in the field below and get a response from a mofo who is really good at naming
+shiz.</p>
 <form action="{{url_for('index')}}" method="post">
     <label for="idea">What's your idea?</label>
     <textarea id="idea" maxlength=500 required></textarea>
