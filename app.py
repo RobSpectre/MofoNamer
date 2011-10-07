@@ -1,16 +1,19 @@
 import os
+import smtplib
 from flask import Flask
 from flask import render_template
 from flask import request
 from flask import url_for
 from flask import redirect
-import smtplib
+from forms import NameForm
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from settings import username, password
 
+
 SEND_GRID = smtplib.SMTP('smtp.sendgrid.net', 587)
 SEND_GRID.login(username, password)
+
 
 def send_email(to, sender, description):
     # Create message container - the correct MIME type is multipart/alternative.
@@ -28,15 +31,21 @@ def send_email(to, sender, description):
     # Attach parts into message container.
     msg.attach(part1)
 
+    SEND_GRID.sendmail(sender, to, msg.as_string())
+
+
 app = Flask(__name__)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def register():
-    form = RegistrationForm(request.form)
-    if request.method == 'POST' and form.validate():
+    form = NameForm(request.form)
+    if request.method == 'POST': #and form.validate():
         flash('Thanks for registering')
+        send_email("kyle.j.conroy@gmail.com", "kyle@twilio.com", 3)
         return redirect(url_for('registered'))
     return render_template('signup.html', form=form)
+
 
 @app.route('/registered')
 def registered():
