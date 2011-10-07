@@ -7,17 +7,17 @@
  */
 
 html, body {
-    background: gray;
+    background: #024656;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    font-family: Droid Sans, Verdana, Arial, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     text-align: left;
 }
 
 h1 {
     font-family: 'Holtwood One SC', serif;
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
 }
 

@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    <h1>Hello World</h1>
+<ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Credits</li>
+</ul>
+<form action="{{url_for('index')}}" method="post">
+    <textarea id="idea" maxlength=500 required></textarea>
+    <input type="email" value="you@rockstar.com" id="submit" required/>
+    <button>Ask a Mofo</button>
+</form>
 {% endblock %}
