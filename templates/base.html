@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% block head %}
+    <title>MofoNamer - {% block title %}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Get a name for your project from a certified mofo." />
+    <meta name="keywords" content="mofonamer, mofo, namer, project namer, kyle conroy, derferman, rob spectre" />
+    <link rel='index' title='MofoNamer' url='http://www.mofonamer.com'>
+    <link rel="stylesheet" href="/static/styles/index.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+    {% block extra_js %}{% endblock %}
+    {% endblock %}
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            {% block header %}
+            <h1 id="title">MofoNamer</h1>
+            <h2 id="page_title">{% block page_title %}{% endblock %}</h2>
+            {% endblock %}
+        </div>
+
+        <div id="content">{% block content %}{% endblock %}</div>
+
+        <div id="footer">
+            {% block footer %}
+            <p>Copyright &copy; 2011.  All rights reserved.  Created by Kyle
+            Conroy and Rob Spectre at <a
+                href="http://py.codeconf.com/">PyCodeConf 2011</a>.</p>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
